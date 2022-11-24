@@ -10,24 +10,74 @@ namespace Opps.InventoryDataManagement
 {
     public class InventoryDataManage
     {
+        List<Inventory> RiceList;
+        List<Inventory> WheatList;
+        List<Inventory> PulsesList;
+        InventoryData inventories;
         public void ReadJSONFile(string file)
         {
-            var jsondata = File.ReadAllText(file);
-            InventoryData inventories = JsonConvert.DeserializeObject<InventoryData>(jsondata);
-            List<Inventory> RiceList = inventories.Rice;
-            Display(RiceList);
-            List<Inventory> WheatList = inventories.Wheat;
-            Display(WheatList);
-            List<Inventory> PulsesList = inventories.Pulses;
-            Display(PulsesList);
+            var jsonData = File.ReadAllText(file);
+            inventories = JsonConvert.DeserializeObject<InventoryData>(jsonData);
+            RiceList = inventories.Rice;
+            WheatList = inventories.Wheat;
+            PulsesList = inventories.Pulses;
 
         }
-        public void Display(List<Inventory> inventories)
+        public void Display()
+        {
+            Read(RiceList);
+            Read(WheatList);
+            Read(PulsesList);
+        }
+        public void Read(List<Inventory> inventories)
         {
             foreach (var data in inventories)
             {
-                Console.WriteLine("Inventory Name: " + data.Name + "\n" + "Weight: " + data.Weight + "\n" + "Price Per Kg: " + data.PricePerKg + "\n" + "Total Price: " + data.Weight * data.PricePerKg);
+                Console.WriteLine(data.Name + " " + data.Weight + " " + data.PricePerKg);
             }
+            Console.WriteLine();
+        }
+
+        public void AddInventoryData(string inventoryName)
+        {
+            Inventory inventory = new Inventory();
+            switch (inventoryName)
+            {
+                case "Rice":
+                    Console.Write("Enter the name : ");
+                    inventory.Name = Console.ReadLine();
+                    Console.Write("Enter the Weight : ");
+                    inventory.Weight = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter the Price");
+                    inventory.PricePerKg = Convert.ToDouble(Console.ReadLine());
+                    RiceList.Add(inventory);
+                    break;
+                case "Wheat":
+                    Console.Write("Enter the name : ");
+                    inventory.Name = Console.ReadLine();
+                    Console.Write("Enter the Weight : ");
+                    inventory.Weight = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter the Price");
+                    inventory.PricePerKg = Convert.ToDouble(Console.ReadLine());
+                    WheatList.Add(inventory);
+                    break;
+                case "pulse":
+                    Console.Write("Enter the name : ");
+                    inventory.Name = Console.ReadLine();
+                    Console.Write("Enter the Weight : ");
+                    inventory.Weight = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter the Price");
+                    inventory.PricePerKg = Convert.ToDouble(Console.ReadLine());
+                    PulsesList.Add(inventory);
+                    break;
+            }
+        }
+
+        public void WriteJsonFile(string file)
+        {
+            var json = JsonConvert.SerializeObject(inventories);
+            File.WriteAllText(file, json);
         }
     }
 }
+    
