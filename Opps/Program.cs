@@ -46,7 +46,7 @@ namespace OOPSPrograms
                         break;
                     case 6:
                         manage.ReadJSONFile(InventoryDataPath);
-                        Console.Write("Enter Inventory Name to delte(Rice, Wheat, Pulse) : ");
+                        Console.Write("Enter Inventory Name to delete(Rice, Wheat, Pulse) : ");
                         string deleteAll = Console.ReadLine();
                         manage.AllDelteInventoryData(deleteAll);
                         manage.WriteJsonFile(InventoryDataPath);
