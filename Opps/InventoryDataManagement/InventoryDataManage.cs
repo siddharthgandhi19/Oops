@@ -61,7 +61,7 @@ namespace Opps.InventoryDataManagement
                     inventory.PricePerKg = Convert.ToDouble(Console.ReadLine());
                     WheatList.Add(inventory);
                     break;
-                case "pulse":
+                case "Pulses":
                     Console.Write("Enter the name : ");
                     inventory.Name = Console.ReadLine();
                     Console.Write("Enter the Weight : ");

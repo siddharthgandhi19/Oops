@@ -26,15 +26,15 @@ namespace OOPSPrograms
                     case 2:                        
                         manage.ReadJSONFile(InventoryDataPath);
                         break;
-                    case 3:                        
-                        manage.ReadJSONFile(InventoryDataPath);
-                        Console.Write("Enter Inventory Name to add(Rice, Wheat, Pulse) : ");
-                        string addName = Console.ReadLine();
-                        manage.ReadJSONFile(InventoryDataPath);
-                        manage.AddInventoryData(addName);
+                    case 3:
+                        manage.Display();
                         break;
                     case 4:
-                        manage.Display();
+                        manage.ReadJSONFile(InventoryDataPath);
+                        Console.Write("Enter Inventory Name to add(Rice, Wheat, Pulses) : ");
+                        string addName = Console.ReadLine();
+                        manage.ReadJSONFile(InventoryDataPath);
+                        manage.AddInventoryData(addName);                        
                         break;
                     default:
                         flag = false;
