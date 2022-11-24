@@ -1,1 +1,53 @@
-{"Rice":[{"Name":"Basmati","Weight":10,"PricePerKg":20.0},{"Name":"Mogra","Weight":20,"PricePerKg":30.0},{"Name":"Dubraj","Weight":25,"PricePerKg":50.0}],"Wheat":[{"Name":"Sarbati","Weight":12,"PricePerKg":22.0},{"Name":"Logban","Weight":20,"PricePerKg":18.0},{"Name":"Durum","Weight":25,"PricePerKg":15.0}],"Pulses":[{"Name":"Sid","Weight":25,"PricePerKg":1E+17},{"Name":"Tuwar Dal","Weight":20,"PricePerKg":105.0},{"Name":"Moong Dal","Weight":25,"PricePerKg":102.0}]}
+{
+  "Rice": [
+    {
+      "Name": "Wild Rice",
+      "Weight": 20,
+      "Price": 20.2
+    },
+    {
+      "Name": "Polished Jasmine",
+      "Weight": 30,
+      "Price": 30.3
+    },
+    {
+      "Name": "Basmati Rice",
+      "Weight": 50,
+      "Price": 50.5
+    }
+  ],
+  "Wheat": [
+    {
+      "Name": "Logban",
+      "Weight": 30,
+      "Price": 30.3
+    },
+    {
+      "Name": "Durum",
+      "Weight": 40,
+      "Price": 40.4
+    },
+    {
+      "Name": "Sarvati",
+      "Weight": 60,
+      "Price": 60.6
+    }
+  ],
+  "Pulses": [
+    {
+      "Name": "Peas",
+      "Weight": 20,
+      "Price": 20.2
+    },
+    {
+      "Name": "Chana Dal",
+      "Weight": 50,
+      "Price": 50.5
+    },
+    {
+      "Name": "Tuwar Dal",
+      "Weight": 10,
+      "Price": 70.7
+    }
+  ]
+}

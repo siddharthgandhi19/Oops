@@ -137,6 +137,22 @@ namespace Opps.InventoryDataManagement
             }
         }
 
+        public void AllDelteInventoryData(string inventoryName)
+        {
+            switch (inventoryName)
+            {
+                case "Rice":
+                    RiceList.Clear();
+                    break;
+                case "Wheat":
+                    WheatList.Clear();
+                    break;
+                case "Pulse":
+                    PulsesList.Clear();
+                    break;
+            }
+        }
+
 
 
         public void WriteJsonFile(string file)
