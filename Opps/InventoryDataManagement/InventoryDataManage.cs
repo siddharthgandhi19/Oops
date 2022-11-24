@@ -73,6 +73,72 @@ namespace Opps.InventoryDataManagement
             }
         }
 
+        public void EditInventoryData(string inventoryName)
+        {
+            switch (inventoryName)
+            {
+                case "Rice":
+                    Console.Write("enter name : ");
+                    string nameRice = Console.ReadLine();
+                    foreach (var rice in RiceList)
+                    {
+                        if (rice.Name.Equals(nameRice))
+                        {
+                            Console.Write("enter name to edit : ");
+                            string editName = Console.ReadLine();
+                            Console.Write("enter weight to edit : ");
+                            int editWeight = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("enter price to edit : ");
+                            double editPrice = Convert.ToDouble(Console.ReadLine());
+                            rice.Name = editName;
+                            rice.Weight = editWeight;
+                            rice.PricePerKg = editPrice;
+                        }
+                    }
+                    break;
+                case "Wheat":
+                    Console.Write("enter name : ");
+                    string nameWheat = Console.ReadLine();
+                    foreach (var wheat in WheatList)
+                    {
+                        if (wheat.Name.Equals(nameWheat))
+                        {
+                            Console.Write("enter name to edit : ");
+                            string editName = Console.ReadLine();
+                            Console.Write("enter weight to edit : ");
+                            int editWeight = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("enter price to edit : ");
+                            double editPrice = Convert.ToDouble(Console.ReadLine());
+                            wheat.Name = editName;
+                            wheat.Weight = editWeight;
+                            wheat.PricePerKg = editPrice;
+                        }
+                    }
+                    break;
+                    case "Pulses":
+                    Console.Write("enter name : ");
+                    string namePulse = Console.ReadLine();
+                    foreach (var pulse in PulsesList)
+                    {
+                        if (pulse.Name.Equals(namePulse))
+                        {
+                            Console.Write("enter name to edit : ");
+                            string editName = Console.ReadLine();
+                            Console.Write("enter weight to edit : ");
+                            int editWeight = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("enter price to edit : ");
+                            double editPrice = Convert.ToDouble(Console.ReadLine());
+                            pulse.Name = editName;
+                            pulse.Weight = editWeight;
+                            pulse.PricePerKg = editPrice;
+                        }
+                    }
+                    break;
+            }
+        }
+
+
+
         public void WriteJsonFile(string file)
         {
             var json = JsonConvert.SerializeObject(inventories);
