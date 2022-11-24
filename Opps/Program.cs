@@ -15,7 +15,7 @@ namespace OOPSPrograms
             while (flag)
             {
                 Console.WriteLine("Welcome to the OOPS Programs");
-                Console.WriteLine(" 1. Inventory Details Management\n 2. Inventory Data Management\n 3. Display\n 4. Add Inventory Data\n 5. Edit Inventory Data\n 6. Delete Whole Inventory List");
+                Console.WriteLine(" 1. Inventory Details Management\n 2. Inventory Data Management\n 3. Display\n 4. Add Inventory Data\n 5. Edit Inventory Data\n 6. Delete Whole Inventory List\n 7. Delete Selected Data");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -34,8 +34,8 @@ namespace OOPSPrograms
                         manage.ReadJSONFile(InventoryDataPath);
                         Console.Write("Enter Inventory Name to add(Rice, Wheat, Pulses) : ");
                         string addName = Console.ReadLine();
-                        manage.ReadJSONFile(InventoryDataPath);
-                        manage.AddInventoryData(addName);                        
+                        manage.AddInventoryData(addName);
+                        manage.WriteJsonFile(InventoryDataPath);
                         break;
                     case 5:
                         manage.ReadJSONFile(InventoryDataPath);
@@ -46,11 +46,19 @@ namespace OOPSPrograms
                         break;
                     case 6:
                         manage.ReadJSONFile(InventoryDataPath);
-                        Console.Write("Enter Inventory Name to delte(Rice, Wheat, Pulse) : ");
+                        Console.Write("Enter Inventory Name to delete(Rice, Wheat, Pulse) : ");
                         string deleteAll = Console.ReadLine();
                         manage.AllDelteInventoryData(deleteAll);
                         manage.WriteJsonFile(InventoryDataPath);
                         break;
+                    case 7:
+                        manage.ReadJSONFile(InventoryDataPath);
+                        Console.Write("Enter Inventory Name to delete(Rice, Wheat, Pulse) : ");
+                        string deleteName = Console.ReadLine();
+                        manage.DeleteInventoryData(deleteName);
+                        manage.WriteJsonFile(InventoryDataPath);
+                        break;
+
                     default:
                         flag = false;
                         Console.WriteLine("Try with right input");
